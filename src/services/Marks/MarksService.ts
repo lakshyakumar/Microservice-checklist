@@ -26,7 +26,7 @@ export class MarksService {
       if (rollNumber) {
         return await Marks.find({ rollNumber });
       } else {
-        return await Marks.find();
+        return await Marks.find().select('-_id -__v -createdAt -updatedAt');
       }
     } catch (e) {
       console.error((e as Error).message, 'while fetching marks data');

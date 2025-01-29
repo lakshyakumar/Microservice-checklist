@@ -26,9 +26,9 @@ const marksService = new MarksService();
  *                 success:
  *                   type: boolean
  *                   example: true
- *                 marks:
+ *                 marksList:
  *                   type: object
- *                   example: { "math": 95, "science": 90 }
+ *                   example: [{ "name": "Jhon", "rollNumber": "001", "grade": "10", "section": "B", "subject": "Science", "marks": 60 }]
  *       500:
  *         description: Internal server error
  *         content:
@@ -68,16 +68,22 @@ export async function GET(request: NextRequest) {
  *             properties:
  *               rollNumber:
  *                 type: string
+ *                 example: "123456"
  *               marks:
  *                 type: number
+ *                example: 95
  *               name:
  *                 type: string
+ *                 example: "John Doe"
  *               grade:
  *                 type: string
+ *                 example: "5"
  *               section:
  *                 type: string
+ *                 example: "A"
  *               subject:
  *                 type: string
+ *                 example: "math"
  *             required:
  *               - rollNumber
  *               - marks
