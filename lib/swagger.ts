@@ -6,7 +6,7 @@ export const getApiDocs = () => {
     definition: {
       openapi: '3.0.0',
       info: {
-        title: 'University Marks Updaton Sample APP',
+        title: 'University Marks Sample APP',
         version: '1.0.0',
       },
       security: [],

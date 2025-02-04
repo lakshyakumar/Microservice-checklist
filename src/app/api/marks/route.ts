@@ -8,6 +8,9 @@ const marksService = new MarksService();
  * /api/marks:
  *   get:
  *     summary: Retrieve marks data for a student
+ *     description: Retrieve marks data for a student
+ *     tags:
+ *       - marks
  *     parameters:
  *       - in: query
  *         name: rollNumber
@@ -59,6 +62,9 @@ export async function GET(request: NextRequest) {
  * /api/marks:
  *   post:
  *     summary: Add marks data for a student
+ *     description: Add marks data for a student
+ *     tags:
+ *       - marks
  *     requestBody:
  *       required: true
  *       content:
@@ -150,6 +156,9 @@ export async function POST(request: NextRequest) {
  * /api/marks:
  *   patch:
  *     summary: update marks data for a student
+ *     description: update marks data for a student
+ *     tags:
+ *       - marks
  *     requestBody:
  *       required: true
  *       content:
@@ -233,6 +242,9 @@ export async function PATCH(request: NextRequest) {
  * /api/marks:
  *   delete:
  *     summary: delete data for a student
+ *     description: delete data for a student
+ *     tags:
+ *       - marks
  *     requestBody:
  *       required: true
  *       content:
