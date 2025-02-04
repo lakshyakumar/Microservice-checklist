@@ -66,24 +66,24 @@ export async function GET(request: NextRequest) {
  *           schema:
  *             type: object
  *             properties:
- *               rollNumber:
- *                 type: string
- *                 example: "123456"
- *               marks:
- *                 type: number
+ *              rollNumber:
+ *                type: string
+ *                example: "123456"
+ *              marks:
+ *                type: number
  *                example: 95
- *               name:
- *                 type: string
- *                 example: "John Doe"
- *               grade:
- *                 type: string
- *                 example: "5"
- *               section:
- *                 type: string
- *                 example: "A"
- *               subject:
- *                 type: string
- *                 example: "math"
+ *              name:
+ *                type: string
+ *                example: "John Doe"
+ *              grade:
+ *                type: string
+ *                example: "5"
+ *              section:
+ *                type: string
+ *                example: "A"
+ *              subject:
+ *                type: string
+ *                example: "math"
  *             required:
  *               - rollNumber
  *               - marks
@@ -92,7 +92,7 @@ export async function GET(request: NextRequest) {
  *               - section
  *               - subject
  *     responses:
- *       200:
+ *       201:
  *         description: Successfully added marks data
  *         content:
  *           application/json:
@@ -143,4 +143,154 @@ export async function POST(request: NextRequest) {
   } catch (e) {
     return NextResponse.json({ error: (e as Error).message, success: false }, { status: 500 });
   }
+}
+
+/**
+ * @swagger
+ * /api/marks:
+ *   patch:
+ *     summary: update marks data for a student
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *              rollNumber:
+ *                type: string
+ *                example: "123456"
+ *              marks:
+ *                type: number
+ *                example: 95
+ *              name:
+ *                type: string
+ *                example: "John Doe"
+ *              grade:
+ *                type: string
+ *                example: "5"
+ *              section:
+ *                type: string
+ *                example: "A"
+ *              subject:
+ *                type: string
+ *                example: "math"
+ *             required:
+ *               - rollNumber
+ *               - marks
+ *               - name
+ *               - grade
+ *               - section
+ *               - subject
+ *     responses:
+ *       200:
+ *         description: Successfully updated marks data
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 success:
+ *                   type: boolean
+ *                   example: true
+ *                 id:
+ *                   type: string
+ *                   example: "60c72b2f9b1e8b3f4c8b4567"
+ *       400:
+ *         description: Invalid input
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 success:
+ *                   type: boolean
+ *                   example: false
+ *                 error:
+ *                   type: string
+ *                   example: "Invalid input"
+ *       500:
+ *         description: Internal server error
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 success:
+ *                   type: boolean
+ *                   example: false
+ *                 error:
+ *                   type: string
+ *                   example: "Internal server error message"
+ */
+export async function PATCH(request: NextRequest) {
+  console.log(request);
+  return NextResponse.json({ message: 'TODO', success: true });
+}
+
+/**
+ * @swagger
+ * /api/marks:
+ *   delete:
+ *     summary: delete data for a student
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *              rollNumber:
+ *                type: string
+ *                example: "123456"
+ *              subject:
+ *                type: string
+ *                example: "math"
+ *             required:
+ *               - rollNumber
+ *               - subject
+ *     responses:
+ *       200:
+ *         description: Successfully deleted marks data
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 success:
+ *                   type: boolean
+ *                   example: true
+ *                 id:
+ *                   type: string
+ *                   example: "60c72b2f9b1e8b3f4c8b4567"
+ *       400:
+ *         description: Invalid input
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 success:
+ *                   type: boolean
+ *                   example: false
+ *                 error:
+ *                   type: string
+ *                   example: "Invalid input"
+ *       500:
+ *         description: Internal server error
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 success:
+ *                   type: boolean
+ *                   example: false
+ *                 error:
+ *                   type: string
+ *                   example: "Internal server error message"
+ */
+export async function DELETE(request: NextRequest) {
+  console.log(request);
+  return NextResponse.json({ message: 'TODO', success: true });
 }
